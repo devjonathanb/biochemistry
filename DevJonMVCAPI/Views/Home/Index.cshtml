@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (Request.IsAuthenticated)
+{
+    <h2>Welcome, @User.Identity.Name</h2>
+    <p>You have successfully signed In</p>
+    @Html.ActionLink("Sign Out", "SignOut", "Account")
+}
+else
+{
+<h2>Please sign in first</h2>
+    @Html.ActionLink("Sign In", "SignIn", "Account")
+}
+
+
+
